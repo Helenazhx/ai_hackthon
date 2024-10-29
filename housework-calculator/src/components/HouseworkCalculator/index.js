@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
-import { baseRates, taskDescriptions, taskLabels } from './rates';
-import { countries, getRegionRates } from './locationData';
-import HouseworkCalculatorView from './HouseworkCalculatorView';
+'use client'
+import { useState } from 'react'
+import { baseRates, taskLabels, taskDescriptions } from '@/lib/constants/rates'
+import { countries, getRegionRates } from '@/lib/constants/locationData'
+import HouseworkCalculatorView from './HouseworkCalculatorView'
 
 const HouseworkCalculator = () => {
   const [country, setCountry] = useState('us');
