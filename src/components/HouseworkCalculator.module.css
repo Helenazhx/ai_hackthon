@@ -1,0 +1,125 @@
+.container {
+    @apply max-w-4xl mx-auto p-6;
+    background: linear-gradient(135deg, #f0f7ff 0%, #f5f3ff 100%);
+  }
+  
+  .card {
+    @apply border-0 shadow-xl bg-white;
+  }
+  
+  .header {
+    @apply bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-t-lg p-6;
+  }
+  
+  .headerContent {
+    @apply flex items-center justify-center space-x-3;
+  }
+  
+  .title {
+    @apply text-3xl font-bold text-white;
+  }
+  
+  .locationSelector {
+    @apply space-y-2 mb-8;
+  }
+  
+  .selectorLabel {
+    @apply text-sm font-semibold text-gray-700 flex items-center space-x-2;
+  }
+  
+  .selectTrigger {
+    @apply w-full md:w-64 border-2 hover:border-blue-400 transition-colors duration-200;
+  }
+  
+  .gridHeader {
+    @apply grid grid-cols-4 gap-4 mb-4 px-4 py-2 bg-gray-100 rounded-lg font-semibold text-gray-700;
+  }
+  
+  .columnHeader {
+    @apply flex items-center justify-center;
+  }
+  
+  .taskRow {
+    @apply grid grid-cols-4 gap-4 items-center p-4 rounded-lg transition-all duration-200;
+  }
+  
+  .taskRowActive {
+    @apply bg-white shadow-md;
+  }
+  
+  .taskRowInactive {
+    @apply bg-gray-50;
+  }
+  
+  .taskLabel {
+    @apply col-span-1 flex items-center space-x-3;
+  }
+  
+  .checkbox {
+    @apply w-5 h-5 border-2 data-[state=checked]:bg-blue-600;
+  }
+  
+  .inputField {
+    @apply w-24 mx-auto text-center border-2 hover:border-blue-400 transition-colors duration-200;
+  }
+  
+  .infoIcon {
+    @apply inline-block h-4 w-4 ml-2 text-blue-400 cursor-help hover:text-blue-600 transition-colors duration-200;
+  }
+  
+  .totalSection {
+    @apply mt-8;
+  }
+  
+  .totalCard {
+    @apply bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg p-6 text-white 
+           transform hover:scale-105 transition-all duration-200 shadow-lg;
+  }
+  
+  .totalValue {
+    @apply text-2xl font-bold text-center;
+  }
+  
+  .totalDescription {
+    @apply text-sm text-center text-blue-100 mt-2;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .fadeInAnimation {
+    animation: fadeIn 0.3s ease-out;
+  }
+  
+  /* Hover Effects */
+  .inputField:focus {
+    @apply outline-none ring-2 ring-blue-400 border-transparent;
+  }
+  
+  .taskRow:hover {
+    @apply shadow-md;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .gridHeader {
+      @apply text-sm;
+    }
+    
+    .taskRow {
+      @apply text-sm;
+    }
+    
+    .inputField {
+      @apply w-20;
+    }
+  }
