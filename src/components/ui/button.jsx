@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Button = ({ children, className = '', onClick, ...props }) => {
+export const Button = ({ children, className = '', onClick, ...props }) => {
   return (
     <button
       className={`inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors 

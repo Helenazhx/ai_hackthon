@@ -4,7 +4,7 @@ import { baseRates, taskLabels, taskDescriptions } from '@/lib/constants/rates'
 import { countries, getRegionRates } from '@/lib/constants/locationData'
 import HouseworkCalculatorView from './HouseworkCalculatorView'
 
-const HouseworkCalculator = () => {
+const HouseworkCalculator = ({ onSubmit }) => {
   const [country, setCountry] = useState('us');
   const [region, setRegion] = useState('');
   const [hours, setHours] = useState({
@@ -113,6 +113,7 @@ const HouseworkCalculator = () => {
       onTaskToggle={handleTaskToggle}
       onHoursChange={handleHoursChange}
       onRateChange={handleRateChange}
+      onSubmit={onSubmit}
     />
   );
 };

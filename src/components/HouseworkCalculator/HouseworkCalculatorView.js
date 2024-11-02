@@ -1,6 +1,6 @@
-
 'use client'
 
+import { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Checkbox } from '@/components/ui/checkbox'
@@ -9,7 +9,7 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/comp
 import { Info, DollarSign, Clock, Calculator } from 'lucide-react'
 import { countries } from '@/lib/constants/locationData';
 import styles from './HouseworkCalculator.module.css';
-
+import FancySubmitButton from './FancySubmitButton';
 
 const HouseworkCalculatorView = ({
   country,
@@ -24,7 +24,8 @@ const HouseworkCalculatorView = ({
   onRegionChange,
   onTaskToggle,
   onHoursChange,
-  onRateChange
+  onRateChange,
+  onSubmit
 }) => {
   return (
     <div className={styles.container}>
@@ -157,32 +158,16 @@ const HouseworkCalculatorView = ({
 
             {/* Total Section */}
             <div className={styles.totalSection}>
-              <div className={styles.totalCard}>
-                <h3 className={styles.totalValue}>
-                  Total Daily Value: ${total}
-                </h3>
-                <p className={styles.totalDescription}>
-                  Based on {region ? countries[country].regions[region].name : countries[country].name} rates
-                </p>
-              </div>
-              
-              {/* Additional Statistics */}
-              {/* <div className="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <h4 className="text-sm font-semibold text-gray-600">Monthly Value</h4>
-                  <p className="text-lg font-bold text-blue-600">${(parseFloat(total) * 30).toFixed(2)}</p>
-                </div>
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <h4 className="text-sm font-semibold text-gray-600">Weekly Value</h4>
-                  <p className="text-lg font-bold text-blue-600">${(parseFloat(total) * 7).toFixed(2)}</p>
-                </div>
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <h4 className="text-sm font-semibold text-gray-600">Active Tasks</h4>
-                  <p className="text-lg font-bold text-blue-600">
-                    {Object.values(tasks).filter(Boolean).length} of {Object.keys(tasks).length}
-                  </p>
-                </div>
-              </div> */}
+              <FancySubmitButton 
+                onClick={() => onSubmit({
+                  tasks,
+                  hours,
+                  customRates,
+                  total,
+                  country,
+                  region
+                })}
+              />
             </div>
           </div>
         </CardContent>

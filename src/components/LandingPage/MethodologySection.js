@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import { Book, Database, Calculator, DollarSign } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 
-const MethodologySection = () => {
+const MethodologySection = ({ calculationData }) => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -36,7 +36,7 @@ const MethodologySection = () => {
       <div className="max-w-7xl mx-auto">
         <div className={`transition-all duration-1000 transform ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
-        }`}>
+        }`}>s
           <h2 className="text-4xl font-bold text-center text-gray-800 mb-4">
             Our Methodology
           </h2>

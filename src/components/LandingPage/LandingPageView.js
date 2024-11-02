@@ -1,12 +1,32 @@
-// src/components/LandingPage/LandingPageView.js
 'use client'
 
+import { useState, useEffect } from 'react';
 import { ArrowDown } from 'lucide-react';
 import HouseworkCalculator from '../HouseworkCalculator';
 import AnimatedText from './AnimatedText';
 import MethodologySection from './MethodologySection';
+import HouseholdValueSummary from './HouseholdValueSummary';
 
-const LandingPageView = ({ onScrollToCalculator }) => {
+const LandingPageView = ({ onScrollToCalculator, userData, setUserData }) => {
+  const [calculationData, setCalculationData] = useState(null);
+
+  // Load calculation data when component mounts
+  useEffect(() => {
+    const savedData = localStorage.getItem('calculationResults');
+    if (savedData) {
+      setCalculationData(JSON.parse(savedData));
+    }
+  }, []);
+
+  const handleCalculatorSubmit = (calculationData) => {
+    // Save to localStorage
+    localStorage.setItem('calculationResults', JSON.stringify(calculationData));
+    // Update state
+    setCalculationData(calculationData);
+    // Scroll to methodology section instead of navigating
+    document.getElementById('summary-section')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
@@ -58,10 +78,34 @@ const LandingPageView = ({ onScrollToCalculator }) => {
             />
           </div>
           
+          {/* User Input Section */}
+          <div className="mb-8 opacity-0 animate-fade-up"
+            style={{ animationDelay: '4.0s', animationFillMode: 'forwards' }}>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <input
+                type="text"
+                placeholder="Your Name"
+                value={userData.name}
+                onChange={(e) => setUserData(prev => ({ ...prev, name: e.target.value }))}
+                className="px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <select
+                value={userData.gender}
+                onChange={(e) => setUserData(prev => ({ ...prev, gender: e.target.value }))}
+                className="px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+                <option value="">Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+
           <button 
             onClick={onScrollToCalculator}
             className="group flex flex-col items-center transition-transform hover:translate-y-2 opacity-0 animate-fade-up"
-            style={{ animationDelay: '4.2s', animationFillMode: 'forwards' }}
+            style={{ animationDelay: '4.8s', animationFillMode: 'forwards' }}
           >
             <span className="text-gray-600 mb-2">Calculate Now</span>
             <ArrowDown className="w-6 h-6 text-gray-600 animate-bounce" />
@@ -71,8 +115,17 @@ const LandingPageView = ({ onScrollToCalculator }) => {
 
       {/* Calculator Section */}
       <div id="calculator-section" className="min-h-screen bg-white py-16">
-        <HouseworkCalculator />
+        <HouseworkCalculator onSubmit={handleCalculatorSubmit} />
       </div>
+
+      {/* HouseholdValueSummary Section */}
+      <div id="summary-section" className="bg-gray-50 py-16">
+        <HouseholdValueSummary 
+          calculationData={calculationData} 
+          userData={userData}
+        />
+      </div>
+
       {/* Methodology Section */}
       <MethodologySection />
     </main>

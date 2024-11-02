@@ -447,6 +447,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$i
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$tooltip$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/src/components/ui/tooltip.jsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$constants$2f$locationData$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/src/lib/constants/locationData.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$HouseworkCalculator$2f$HouseworkCalculator$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__ = __turbopack_import__("[project]/src/components/HouseworkCalculator/HouseworkCalculator.module.css [app-client] (css module)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/src/components/ui/button.jsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$calculator$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Calculator$3e$__ = __turbopack_import__("[project]/node_modules/lucide-react/dist/esm/icons/calculator.js [app-ssr] (ecmascript) <export default as Calculator>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$dollar$2d$sign$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__DollarSign$3e$__ = __turbopack_import__("[project]/node_modules/lucide-react/dist/esm/icons/dollar-sign.js [app-ssr] (ecmascript) <export default as DollarSign>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$clock$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Clock$3e$__ = __turbopack_import__("[project]/node_modules/lucide-react/dist/esm/icons/clock.js [app-ssr] (ecmascript) <export default as Clock>");
@@ -461,7 +462,8 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 ;
 ;
 ;
-const HouseworkCalculatorView = ({ country, region, tasks, hours, customRates, taskLabels, taskDescriptions, total, onCountryChange, onRegionChange, onTaskToggle, onHoursChange, onRateChange })=>{
+;
+const HouseworkCalculatorView = ({ country, region, tasks, hours, customRates, taskLabels, taskDescriptions, total, onCountryChange, onRegionChange, onTaskToggle, onHoursChange, onRateChange, onSubmit })=>{
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$HouseworkCalculator$2f$HouseworkCalculator$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].container,
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
@@ -850,34 +852,18 @@ const HouseworkCalculatorView = ({ country, region, tasks, hours, customRates, t
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$HouseworkCalculator$2f$HouseworkCalculator$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].totalSection,
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$HouseworkCalculator$2f$HouseworkCalculator$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].totalCard,
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                            className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$HouseworkCalculator$2f$HouseworkCalculator$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].totalValue,
-                                            children: [
-                                                "Total Daily Value: $",
-                                                total
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/src/components/HouseworkCalculator/HouseworkCalculatorView.js",
-                                            lineNumber: 161,
-                                            columnNumber: 17
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$HouseworkCalculator$2f$HouseworkCalculator$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].totalDescription,
-                                            children: [
-                                                "Based on ",
-                                                region ? __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$constants$2f$locationData$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["countries"][country].regions[region].name : __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$constants$2f$locationData$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["countries"][country].name,
-                                                " rates"
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/src/components/HouseworkCalculator/HouseworkCalculatorView.js",
-                                            lineNumber: 164,
-                                            columnNumber: 17
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
+                                    className: "w-full py-6 text-lg font-semibold",
+                                    onClick: ()=>onSubmit({
+                                            tasks,
+                                            hours,
+                                            customRates,
+                                            total,
+                                            country,
+                                            region
+                                        }),
+                                    children: "Calculate Results"
+                                }, void 0, false, {
                                     fileName: "[project]/src/components/HouseworkCalculator/HouseworkCalculatorView.js",
                                     lineNumber: 160,
                                     columnNumber: 15
@@ -1559,7 +1545,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 ;
 ;
 ;
-const LandingPageView = ({ onScrollToCalculator })=>{
+const LandingPageView = ({ onScrollToCalculator, userData, setUserData })=>{
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
         className: "min-h-screen",
         children: [
@@ -1683,11 +1669,91 @@ const LandingPageView = ({ onScrollToCalculator })=>{
                                 lineNumber: 48,
                                 columnNumber: 11
                             }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "mb-8 opacity-0 animate-fade-up",
+                                style: {
+                                    animationDelay: '4.0s',
+                                    animationFillMode: 'forwards'
+                                },
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "flex flex-col sm:flex-row gap-4 justify-center items-center",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                            type: "text",
+                                            placeholder: "Your Name",
+                                            value: userData.name,
+                                            onChange: (e)=>setUserData((prev)=>({
+                                                        ...prev,
+                                                        name: e.target.value
+                                                    })),
+                                            className: "px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/LandingPage/LandingPageView.js",
+                                            lineNumber: 65,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
+                                            value: userData.gender,
+                                            onChange: (e)=>setUserData((prev)=>({
+                                                        ...prev,
+                                                        gender: e.target.value
+                                                    })),
+                                            className: "px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                    value: "",
+                                                    children: "Select Gender"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/src/components/LandingPage/LandingPageView.js",
+                                                    lineNumber: 77,
+                                                    columnNumber: 17
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                    value: "male",
+                                                    children: "Male"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/src/components/LandingPage/LandingPageView.js",
+                                                    lineNumber: 78,
+                                                    columnNumber: 17
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                    value: "female",
+                                                    children: "Female"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/src/components/LandingPage/LandingPageView.js",
+                                                    lineNumber: 79,
+                                                    columnNumber: 17
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                    value: "other",
+                                                    children: "Other"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/src/components/LandingPage/LandingPageView.js",
+                                                    lineNumber: 80,
+                                                    columnNumber: 17
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/src/components/LandingPage/LandingPageView.js",
+                                            lineNumber: 72,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/src/components/LandingPage/LandingPageView.js",
+                                    lineNumber: 64,
+                                    columnNumber: 13
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/LandingPage/LandingPageView.js",
+                                lineNumber: 62,
+                                columnNumber: 11
+                            }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 onClick: onScrollToCalculator,
                                 className: "group flex flex-col items-center transition-transform hover:translate-y-2 opacity-0 animate-fade-up",
                                 style: {
-                                    animationDelay: '4.2s',
+                                    animationDelay: '4.8s',
                                     animationFillMode: 'forwards'
                                 },
                                 children: [
@@ -1696,20 +1762,20 @@ const LandingPageView = ({ onScrollToCalculator })=>{
                                         children: "Calculate Now"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/LandingPage/LandingPageView.js",
-                                        lineNumber: 66,
+                                        lineNumber: 90,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$down$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowDown$3e$__["ArrowDown"], {
                                         className: "w-6 h-6 text-gray-600 animate-bounce"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/LandingPage/LandingPageView.js",
-                                        lineNumber: 67,
+                                        lineNumber: 91,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/LandingPage/LandingPageView.js",
-                                lineNumber: 61,
+                                lineNumber: 85,
                                 columnNumber: 11
                             }, this)
                         ]
@@ -1729,17 +1795,17 @@ const LandingPageView = ({ onScrollToCalculator })=>{
                 className: "min-h-screen bg-white py-16",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$HouseworkCalculator$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                     fileName: "[project]/src/components/LandingPage/LandingPageView.js",
-                    lineNumber: 74,
+                    lineNumber: 98,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/LandingPage/LandingPageView.js",
-                lineNumber: 73,
+                lineNumber: 97,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$LandingPage$2f$MethodologySection$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/src/components/LandingPage/LandingPageView.js",
-                lineNumber: 77,
+                lineNumber: 101,
                 columnNumber: 7
             }, this)
         ]
@@ -1768,6 +1834,10 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Landing
 ;
 ;
 const LandingPage = ()=>{
+    const [userData, setUserData] = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].useState({
+        name: '',
+        gender: ''
+    });
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         // Fade in text elements sequentially on load
         const textElements = document.querySelectorAll('.animate-fade-in');
@@ -1783,10 +1853,12 @@ const LandingPage = ()=>{
         });
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$LandingPage$2f$LandingPageView$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-        onScrollToCalculator: scrollToCalculator
+        onScrollToCalculator: scrollToCalculator,
+        userData: userData,
+        setUserData: setUserData
     }, void 0, false, {
         fileName: "[project]/src/components/LandingPage/index.js",
-        lineNumber: 24,
+        lineNumber: 29,
         columnNumber: 10
     }, this);
 };

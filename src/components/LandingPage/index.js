@@ -5,6 +5,11 @@ import React, { useEffect } from 'react';
 import LandingPageView from './LandingPageView';
 
 const LandingPage = () => {
+  const [userData, setUserData] = React.useState({
+    name: '',
+    gender: ''
+  });
+
   useEffect(() => {
     // Fade in text elements sequentially on load
     const textElements = document.querySelectorAll('.animate-fade-in');
@@ -21,7 +26,11 @@ const LandingPage = () => {
     });
   };
 
-  return <LandingPageView onScrollToCalculator={scrollToCalculator} />;
+  return <LandingPageView 
+    onScrollToCalculator={scrollToCalculator}
+    userData={userData}
+    setUserData={setUserData}
+  />;
 };
 
 export default LandingPage;
