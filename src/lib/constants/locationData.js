@@ -21,7 +21,7 @@ export const countries = {
         },
         west: {
           name: "West",
-          rateMultiplier: 1.3,
+          rateMultiplier: 1.2,
           states: ["MT", "ID", "WY", "CO", "NM", "AZ", "UT", "NV", "WA", "OR", "CA", "AK", "HI"]
         }
       }
