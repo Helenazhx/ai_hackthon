@@ -131,7 +131,7 @@ const HouseholdValueSummary = ({ calculationData, userData }) => {
          - Recommend ways to involve other household members if applicable
          - Provide tips for maintaining work-life balance
 
-      Please format the response like a letter with no more than 500 words, clear paragraphs with appropriate spacing and use a conversational, empathetic tone throughout.
+      Please format the response like a letter with NO MORE THAN 500 WORDS                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               , clear paragraphs with appropriate spacing and use a conversational, empathetic tone throughout.
     `;
   };
 
