@@ -197,9 +197,7 @@ const HouseholdValueSummary = ({ calculationData, userData }) => {
             {aiInsights && (
               <div className="bg-gray-50 p-4 rounded-lg">
                 <div className="prose max-w-none">
-                  <AiInsights>{aiInsights.split('\n').map((paragraph, index) => (
-                    <p key={index} className="mb-4">{paragraph}</p>
-                  ))}</AiInsights>
+                  <AiInsights insights={aiInsights} />
                 </div>
               </div>
             )}
