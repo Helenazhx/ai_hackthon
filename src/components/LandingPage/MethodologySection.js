@@ -36,7 +36,7 @@ const MethodologySection = ({ calculationData }) => {
       <div className="max-w-7xl mx-auto">
         <div className={`transition-all duration-1000 transform ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
-        }`}>s
+        }`}>
           <h2 className="text-4xl font-bold text-center text-gray-800 mb-4">
             Our Methodology
           </h2>
@@ -55,7 +55,6 @@ const MethodologySection = ({ calculationData }) => {
               </CardHeader>
               <CardContent>
                 <ul className="space-y-4">
-                  <li>• Bureau of Labor Statistics wage data for domestic workers</li>
                   <li>• Industry standard rates for professional home services</li>
                   <li>• Regional cost-of-living adjustments</li>
                   <li>• Market rates for specialized household services</li>
@@ -74,8 +73,8 @@ const MethodologySection = ({ calculationData }) => {
                 <ul className="space-y-4">
                   <li>• Task-specific hourly rates based on professional equivalents</li>
                   <li>• Regional adjustments using local economic indicators</li>
-                  <li>• Consideration of skill level and specialization</li>
                   <li>• Regular updates to maintain accuracy</li>
+                  <li>•24hours/day, 7days/week, 52weeks/year</li>
                 </ul>
               </CardContent>
             </Card>
@@ -123,7 +122,6 @@ const MethodologySection = ({ calculationData }) => {
                   <li>• Local cost of living index</li>
                   <li>• Regional wage data for similar professions</li>
                   <li>• Market rates for household services in your area</li>
-                  <li>• State and local economic indicators</li>
                 </ul>
               </CardContent>
             </Card>

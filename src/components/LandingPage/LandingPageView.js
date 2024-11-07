@@ -10,12 +10,34 @@ import HouseholdValueSummary from './HouseholdValueSummary';
 const LandingPageView = ({ onScrollToCalculator, userData, setUserData }) => {
   const [calculationData, setCalculationData] = useState(null);
 
-  // Load calculation data when component mounts
+  // Clear calculation data on page refresh
   useEffect(() => {
-    const savedData = localStorage.getItem('calculationResults');
-    if (savedData) {
-      setCalculationData(JSON.parse(savedData));
+    const handleBeforeUnload = () => {
+      localStorage.removeItem('calculationResults');
+    };
+
+    // Add event listener for page refresh/unload
+    window.addEventListener('beforeunload', handleBeforeUnload);
+
+    // Initialize calculationData only if there's an active session
+    const sessionActive = sessionStorage.getItem('calculationSession');
+    if (sessionActive) {
+      const savedData = localStorage.getItem('calculationResults');
+      if (savedData) {
+        setCalculationData(JSON.parse(savedData));
+      }
+    } else {
+      // Clear any existing data on fresh page load
+      localStorage.removeItem('calculationResults');
+      setCalculationData(null);
+      // Set session flag
+      sessionStorage.setItem('calculationSession', 'true');
     }
+
+    // Cleanup
+    return () => {
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+    };
   }, []);
 
   const handleCalculatorSubmit = (calculationData) => {

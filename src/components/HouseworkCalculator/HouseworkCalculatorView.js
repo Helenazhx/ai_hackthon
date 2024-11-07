@@ -5,7 +5,7 @@ import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Input } from '@/components/ui/input'
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
+import { Tooltip} from '@/components/ui/tooltip'
 import { Info, DollarSign, Clock, Calculator } from 'lucide-react'
 import { countries } from '@/lib/constants/locationData';
 import styles from './HouseworkCalculator.module.css';

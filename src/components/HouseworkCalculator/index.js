@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { baseRates, taskLabels, taskDescriptions } from '@/lib/constants/rates'
 import { countries, getRegionRates } from '@/lib/constants/locationData'
 import HouseworkCalculatorView from './HouseworkCalculatorView'
+import { Alert, AlertDescription } from '@/components/ui/alert';
 
 const HouseworkCalculator = ({ onSubmit }) => {
   const [country, setCountry] = useState('us');
@@ -16,7 +17,7 @@ const HouseworkCalculator = ({ onSubmit }) => {
     maintenance: 0,
     organizing: 0
   });
-
+  const [error, setError] = useState('');
   const [tasks, setTasks] = useState({
     cooking: false,
     cleaning: false,
@@ -48,18 +49,46 @@ const HouseworkCalculator = ({ onSubmit }) => {
     return total.toFixed(2);
   };
 
+  const calculateTotalHours = () => {
+    return Object.entries(tasks).reduce((total, [task, isActive]) => {
+      return isActive ? total + (hours[task] || 0) : total;
+    }, 0);
+  };
+
   const handleHoursChange = (task, value) => {
+    const newValue = Math.min(parseFloat(value) || 0, 24);
+    const otherTasksHours = calculateTotalHours() - (hours[task] || 0);
+    
+    if (newValue + otherTasksHours > 24) {
+      setError('Total hours across all tasks cannot exceed 24 hours per day');
+      return;
+    }
+
+    setError('');
     setHours(prev => ({
       ...prev,
-      [task]: parseFloat(value) || 0
+      [task]: newValue
     }));
   };
 
   const handleTaskToggle = (task) => {
-    setTasks(prev => ({
-      ...prev,
-      [task]: !prev[task]
-    }));
+    const newTasks = {
+      ...tasks,
+      [task]: !tasks[task]
+    };
+    
+    // Calculate total hours with the new task state
+    const totalHours = Object.entries(newTasks).reduce((total, [currentTask, isActive]) => {
+      return isActive ? total + (hours[currentTask] || 0) : total;
+    }, 0);
+
+    if (totalHours > 24) {
+      setError('Total hours across all tasks cannot exceed 24 hours per day');
+      return;
+    }
+
+    setError('');
+    setTasks(newTasks);
   };
 
   const handleRateChange = (task, value) => {
@@ -72,9 +101,7 @@ const HouseworkCalculator = ({ onSubmit }) => {
   // Update custom rates when country changes
   const handleCountryChange = (newCountry) => {
     setCountry(newCountry);
-    setRegion(''); // Reset region when country changes
-    
-    // Update rates with base rates for the new country
+    setRegion('');
     setCustomRates(Object.keys(baseRates[newCountry]).reduce((acc, task) => {
       acc[task] = baseRates[newCountry][task];
       return acc;
@@ -99,22 +126,29 @@ const HouseworkCalculator = ({ onSubmit }) => {
   };
 
   return (
-    <HouseworkCalculatorView
-      country={country}
-      region={region}
-      tasks={tasks}
-      hours={hours}
-      customRates={customRates}
-      taskLabels={taskLabels}
-      taskDescriptions={taskDescriptions}
-      total={calculateTotal()}
-      onCountryChange={handleCountryChange}
-      onRegionChange={handleRegionChange}
-      onTaskToggle={handleTaskToggle}
-      onHoursChange={handleHoursChange}
-      onRateChange={handleRateChange}
-      onSubmit={onSubmit}
-    />
+    <>
+      {error && (
+        <Alert variant="destructive" className="mb-4">
+          <AlertDescription>{error}</AlertDescription>
+        </Alert>
+      )}
+      <HouseworkCalculatorView
+        country={country}
+        region={region}
+        tasks={tasks}
+        hours={hours}
+        customRates={customRates}
+        taskLabels={taskLabels}
+        taskDescriptions={taskDescriptions}
+        total={calculateTotal()}
+        onCountryChange={handleCountryChange}
+        onRegionChange={handleRegionChange}
+        onTaskToggle={handleTaskToggle}
+        onHoursChange={handleHoursChange}
+        onRateChange={handleRateChange}
+        onSubmit={onSubmit}
+      />
+    </>
   );
 };
 
