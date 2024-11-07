@@ -33,7 +33,8 @@ Did you know? The UN reports that women worldwide spend 2.5 more times on unpaid
 *"Behind all your stories is always your mother's story, because hers is where yours begins." - Mitch Albom*
 
 [Start Calculating Your Value →](https://houseworkcalculator.vercel.app/)
-[personal pages](https://handyxuan.com/)
+
+[Personal pages ->](https://handyxuan.com/)
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
